@@ -1,4 +1,5 @@
 # OpenAI Agents MCP Server
+[![smithery badge](https://smithery.ai/badge/@lroolle/openai-agents-mcp-server)](https://smithery.ai/server/@lroolle/openai-agents-mcp-server)
 
 A Model Context Protocol (MCP) server that exposes OpenAI agents through the MCP protocol.
 
@@ -26,6 +27,14 @@ Each agent is accessed through the MCP protocol, making them available to any MC
 - [uv](https://github.com/astral-sh/uv) package manager (recommended)
 - OpenAI API key
 
+
+### Installing via Smithery
+
+To install openai-agents-mcp-server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@lroolle/openai-agents-mcp-server):
+
+```bash
+npx -y @smithery/cli install @lroolle/openai-agents-mcp-server --client claude
+```
 
 ### Claude Desktop
 
