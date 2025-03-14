@@ -1,0 +1,57 @@
+[project]
+name = "agents-mcp-server"
+version = "0.1.0"
+description = "MCP server for OpenAI agents and agents tools."
+readme = "README.md"
+authors = [{ name = "Eric Wang", email = "wrqatw@gmail.com" }]
+requires-python = ">=3.11"
+dependencies = [
+  "mcp",
+  "pydantic",
+  "openai",
+  "openai-agents",
+  "typer",
+  "rich",
+  "uvicorn",
+  "requests",
+]
+
+[project.scripts]
+openai-agents-mcp-server = "agents_mcp_server:main"
+openai-agents-mcp-install = "agents_mcp_server.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = ["ipython>=9.0.2"]
+
+
+[tool.isort]
+profile = "black"
+line_length = 100     # Keep same with black.line-length
+multi_line_output = 3
+
+[tool.black]
+line-length = 100 # Too short with default=80
+target-version = ["py39"]
+skip-magic-trailing-comma = true
+include = '\.pyi?$'
+force-exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.pytest_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | migrations
+  | fixture
+  | fixtures
+)/
+'''
